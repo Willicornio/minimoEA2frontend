@@ -1,0 +1,93 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-grid>
+
+
+  <ion-row>
+    <ion-col size-md="6" offset-md="3">
+      <h5>Crear asignatura</h5>
+      <form #form="ngForm" (ngSubmit)="onSubmit(form)" method="post">
+        <ion-item>
+          <ion-label position="floating">Nombre</ion-label>
+          <ion-input ngModel type="name" name="name" placeholder="nombre"></ion-input>
+          
+
+        </ion-item>
+
+        <ion-button type="submit" expand="full">crear</ion-button>
+       
+      </form>
+
+    </ion-col>
+  </ion-row>
+
+
+
+  <ion-row>
+    <ion-col size-md="6" offset-md="3">
+      <h5>Crear alumno</h5>
+      <form #crearalumnform="ngForm" (ngSubmit)="onSubmit2(crearalumnform)" method="post">
+        <ion-item>
+          <ion-label position="floating">Nombre</ion-label>
+          <ion-input ngModel type="name" name="name" placeholder="nombre"></ion-input>
+          <ion-label position="floating">Dirección</ion-label>
+          <ion-input ngModel type="adress" name="adress" placeholder="adress"></ion-input>
+          <ion-label position="floating">Phone</ion-label>
+          <ion-input ngModel type="phones" name="phones" placeholder="phones"></ion-input>
+
+
+        </ion-item>
+
+        <ion-button type="submit" expand="full">crear</ion-button>
+       
+      </form>
+
+    </ion-col>
+  </ion-row>
+
+  &nbsp;
+  &nbsp;
+
+
+
+    <ion-row> 
+        <ion-col size-md="2" offset-md="3">
+          <th>Carreas disponibles en nuestra escuela</th>
+      <div *ngFor="let string of listasCarras"> {{string}} 
+                        <ion-col align-self-center text-center>
+                            <button ion-button icon-start clear small (click)="entrarcarrera(string)">
+                              <ion-icon name="text"></ion-icon>
+                              <div>Entrar</div>
+                            </button>
+                          </ion-col> 
+      </div>
+     </ion-col>
+
+    <ion-col size-md="2" offset-md="2">
+      <th>Asignaturas disponibles en nuestra escuela</th>
+  <div *ngFor="let subject of listasubjects"> {{subject.name}} 
+                    <ion-col align-self-center text-center>
+                        <button ion-button icon-start clear small (click)="entrarasignatura(subject.name)">
+                          <ion-icon name="text"></ion-icon>
+                          <div>Entrar</div>
+                        </button>
+                      </ion-col> 
+           <ion-col align-self-center text-center>
+                          <button ion-button icon-start clear small (click)="borrar(subject.name)">
+                            <ion-icon name="text"></ion-icon>
+                            <div>Borrar</div>
+                          </button>
+                        </ion-col> 
+    </div>
+   </ion-col>
+    </ion-row>
+      </ion-grid>
+   
+</ion-content>

@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-grid>
+
+
+
+  <ion-row>
+    <ion-col size-md="6" offset-md="3">
+      <h5>Crear alumno</h5>
+      <form #anadiralumno="ngForm" (ngSubmit)="onSubmit2(anadiralumno)" method="post">
+        <ion-item>
+          <ion-label position="floating">Nombre</ion-label>
+          <ion-input ngModel type="name" name="name" placeholder="nombre"></ion-input>
+        </ion-item>
+
+        <ion-button type="submit" expand="full" >Añadir </ion-button>
+       
+      </form>
+
+    </ion-col>
+  </ion-row>
+
+
+    <ion-row>
+          <ion-col size-md="3" offset-md="2">
+            <!-- <div class="ion-padding"> -->
+              <div *ngFor="let student of listaTodos2">
+                <ion-card>
+                  <ion-card-header>
+                    <ion-card-title>{{student.name}}</ion-card-title>
+                  </ion-card-header>
+                  <ion-card-content>
+                   
+                  <ion-col>
+                        <div>calle : {{student.adress}}</div>
+                    </ion-col>
+                             <ion-col>
+                        <div>phone : {{student.phones}}</div>
+                    </ion-col>
+              <ion-col>
+                        <div> estudios :{{student.studies}}</div>
+                    </ion-col>                 
+                  </ion-card-content>
+                </ion-card>
+              </div>
+            <!-- </div> -->
+            </ion-col>
+   
+ 
+        </ion-row> 
+
+      </ion-grid>
+   
+</ion-content>
